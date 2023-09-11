@@ -1,5 +1,9 @@
 package Entidades;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente {
     private String nome;
     protected long cpf;
@@ -7,38 +11,53 @@ public class Cliente {
     private long Rg;
     private String endereco;
     private int idade;
-    protected int senha;
-    private double saldo;
+    private List<ContaCorrente> listaConta = new ArrayList<>();
 
-
-
-    public boolean sacar (double valor){
-        if (valor <= this.saldo) {
-            this.saldo -= valor;
-            System.out.println("\nSaque realizado com sucesso! Saldo atual: " + getSaldo());
-            return true;
-        }
-        System.out.println("\nSaldo Insuficiente");
-        return false;
+    public String getNome() {
+        return nome;
     }
 
-    public boolean depositar (double valor){
-        this.saldo += valor;
-        return true;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public double getSaldo(){
-        return this.saldo;
+    public long getCpf() {
+        return cpf;
     }
 
-    public boolean transferir(double valor){
-        if (valor <= this.saldo) {
-            this.saldo -= valor;
-            System.out.println("\nTransferência realizada com sucesso! Saldo atual: " + getSaldo());
-            return true;
-        }
-        System.out.println("\nSaldo Insuficiente");
-        return false;
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
     }
 
+    public int getAnodeNascimento() {
+        return AnodeNascimento;
+    }
+
+    public void setAnodeNascimento(int anodeNascimento) {
+        AnodeNascimento = anodeNascimento;
+    }
+
+    public long getRg() {
+        return Rg;
+    }
+
+    public void setRg(long rg) {
+        Rg = rg;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
 }
